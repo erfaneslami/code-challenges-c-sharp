@@ -1,4 +1,4 @@
-﻿namespace CodeChallenges.Problems.AverageOfSubTree.Models;
+﻿namespace CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree.Models;
 
 public class TreeNode
 {

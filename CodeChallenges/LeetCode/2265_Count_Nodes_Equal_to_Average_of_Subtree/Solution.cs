@@ -1,18 +1,18 @@
-﻿using CodeChallenges.Problems.AverageOfSubTree.Models;
+﻿using CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree.Models;
 
-namespace CodeChallenges.Problems.AverageOfSubTree;
+namespace CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree;
 
-public class AverageOfSubTree
+public class Solution
 {
-   private static int ResultNodeCount { get; set; }
+   private int ResultNodeCount { get; set; }
    
-   public static int Solve(TreeNode root)
+   public  int AverageOfSubtree(TreeNode root)
    {
       CalcNode(root);
       return ResultNodeCount;
    }
 
-   private static (int sum, int count) CalcNode(TreeNode node)
+   private (int sum, int count) CalcNode(TreeNode node)
    {
       var sum = node.val;
       var count = 1;

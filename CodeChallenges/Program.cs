@@ -1,5 +1,5 @@
-﻿using CodeChallenges.Problems.AverageOfSubTree;
-using CodeChallenges.Problems.AverageOfSubTree.Models;
+﻿using CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree;
+using CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree.Models;
 
 namespace CodeChallenges;
 
@@ -14,6 +14,7 @@ class Program
             val = 1
         };
 
-        AverageOfSubTree.Solve(testData);
+        var s = new Solution();
+        s.AverageOfSubtree(testData);
     }
 }
