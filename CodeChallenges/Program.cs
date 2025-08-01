@@ -1,5 +1,6 @@
-﻿using CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree;
-using CodeChallenges.LeetCode._2265_Count_Nodes_Equal_to_Average_of_Subtree.Models;
+﻿
+using CodeChallenges.LeetCode._701_Insert_into_a_Binary_Search_Tree;
+using CodeChallenges.Models;
 
 namespace CodeChallenges;
 
@@ -11,10 +12,12 @@ class Program
 
         var testData = new TreeNode()
         {
-            val = 1
+            val = 4,
+            left = new TreeNode(2, left: new TreeNode(1), right: new TreeNode(3)),
+            right = new TreeNode(7)
         };
 
         var s = new Solution();
-        s.AverageOfSubtree(testData);
+        s.InsertIntoBST(testData,5);
     }
 }
