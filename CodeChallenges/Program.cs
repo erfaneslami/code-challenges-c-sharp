@@ -1,6 +1,4 @@
-﻿
-using CodeChallenges.LeetCode._701_Insert_into_a_Binary_Search_Tree;
-using CodeChallenges.Models;
+﻿using CodeChallenges.LeetCode._638_Shopping_Offers;
 
 namespace CodeChallenges;
 
@@ -10,14 +8,11 @@ class Program
     {
         Console.WriteLine("Hello, World!");
 
-        var testData = new TreeNode()
-        {
-            val = 4,
-            left = new TreeNode(2, left: new TreeNode(1), right: new TreeNode(3)),
-            right = new TreeNode(7)
-        };
-
-        var s = new Solution();
-        s.InsertIntoBST(testData,5);
+        int[] prices = [2,5];
+        int[] needs = [3, 2];
+        int[][] special = [[3, 0, 5], [1, 2, 10]];
+        var result = new Solution().ShoppingOffers(prices, special, needs);
+        Console.WriteLine(result);
     }
+
 }
