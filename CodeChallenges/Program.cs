@@ -1,4 +1,5 @@
-﻿using CodeChallenges.LeetCode._638_Shopping_Offers;
+﻿
+using CodeChallenges.LeetCode._347_Top_K_Frequent_Elements;
 
 namespace CodeChallenges;
 
@@ -8,10 +9,8 @@ class Program
     {
         Console.WriteLine("Hello, World!");
 
-        int[] prices = [2,5];
-        int[] needs = [3, 2];
-        int[][] special = [[3, 0, 5], [1, 2, 10]];
-        var result = new Solution().ShoppingOffers(prices, special, needs);
+        int[] nums = [-1, -1];
+        var result = new Solution().TopKFrequent(nums,1);
         Console.WriteLine(result);
     }
 
