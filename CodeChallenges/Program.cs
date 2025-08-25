@@ -1,5 +1,6 @@
 ﻿
-using CodeChallenges.LeetCode._347_Top_K_Frequent_Elements;
+
+using CodeChallenges.LeetCode._36_Valid_Sudoku;
 
 namespace CodeChallenges;
 
@@ -9,8 +10,19 @@ class Program
     {
         Console.WriteLine("Hello, World!");
 
-        int[] nums = [-1, -1];
-        var result = new Solution().TopKFrequent(nums,1);
+        char[][] board =
+        [
+            ['5', '3', '.', '.', '7', '.', '.', '.', '.'], 
+            ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+            ['.', '9', '8', '.', '.', '.', '.', '6', '.'], 
+            ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+            ['4', '.', '.', '8', '.', '3', '.', '.', '1'], 
+            ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+            ['.', '6', '.', '.', '.', '.', '2', '8', '.'], 
+            ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+            ['.', '.', '.', '.', '8', '.', '.', '7', '9']
+        ];
+        var result = new Solution().IsValidSudoku(board);
         Console.WriteLine(result);
     }
 
