@@ -1,47 +1,34 @@
 ﻿namespace CodeChallenges.LeetCode._486_Predict_the_Winner;
 
-    public class GameState
-    {
-        public int[] CurrentBoard { get; set; }
-        public pTYPE Type { get; set; }
-    }
-
 public sealed class Solution {
     public bool PredictTheWinner(int[] nums)
     {
-
-        return true;
+        return CurrentPlayerMaxDiffScore(ref nums, 0, nums.Length - 1, new Dictionary<(int, int), int>()) >= 0;
     }
 
-
-    private void BFSTraverseTree(int[] nums)
+    private int CurrentPlayerMaxDiffScore(ref int[] nums, int leftIndex, int rightIndex, Dictionary<(int, int), int> memo)
     {
-        var turn = 1;
-        var p1Scores = 0;
-        var p2Scores = 0;
-        var queue = new Queue<int>();
-        var counter = 0; 
-        queue.Enqueue(nums[0]);
-
-        while (queue.Count > 0)
+        if (memo.TryGetValue((leftIndex,rightIndex),out var score))
         {
-            var score = queue.Dequeue();
-            if (turn == 1)
-            {
-                p1Scores += score;
-                turn = 2;
-            }
-            else
-            {
-                p2Scores += score;
-                turn = 1;
-            }
-            
-            queue.Enqueue(nums[counter]);
-            queue.Enqueue(nums[nums.Length - 1 - counter]);
-            counter++;
-            
+            return score;
         }
-    }
 
+        if (leftIndex == rightIndex)
+        {
+            return nums[leftIndex];
+        }
+        
+        var leftMove = CurrentPlayerMaxDiffScore(ref nums, leftIndex + 1, rightIndex, memo);
+        var rightMove = CurrentPlayerMaxDiffScore(ref nums, leftIndex, rightIndex - 1, memo);
+       
+        var result = Math.Max(
+            (nums[leftIndex] - leftMove ),
+            (nums[rightIndex] - rightMove )
+        );
+        
+        memo[(leftIndex, rightIndex)] = result;
+
+        return result;
+    }
+    
 }
