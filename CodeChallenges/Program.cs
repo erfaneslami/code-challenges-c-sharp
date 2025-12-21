@@ -1,7 +1,4 @@
-﻿
-
-
-using CodeChallenges.LeetCode._1884_Egg_Drop_With_2_Eggs_and_N_Floors;
+﻿using CodeChallenges.LeetCode._887_Super_Egg_Drop;
 
 namespace CodeChallenges;
 
@@ -11,8 +8,18 @@ class Program
     {
         Console.WriteLine("Hello, World!");
 
-        var result = new Solution().TwoEggDrop(100);
-        Console.WriteLine(result);
+        try
+        {
+            var result = new Solution().SuperEggDrop(2,100);
+            
+            Console.WriteLine(result);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
 }
